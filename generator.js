@@ -28,6 +28,6 @@ const generateDanceGroups = () => {
             totalPoints: g.totalPoints,
             result: results.find(r => r.guid == g.result).name
         }))
-        .forEach(g => fs.writeFileSync(`./docs/kolektivi/${g.guid}`, template(g)))
+        .forEach(g => fs.writeFileSync(`./docs/kolektivi/${g.guid}.html`, template(g)))
 }
 generateDanceGroups()
