@@ -15,6 +15,20 @@ fs.mkdirSync("./docs")
 
 const readTemplate = path => fs.readFileSync(path, {encoding: "utf-8"})
 
+const generateIndex = () => {
+    const template = Handlebars.compile(readTemplate("./views/index.html"))
+    const gs = danceGroups
+            .map(g => ({
+                guid: g.guid,
+                fullName: g.fullName,
+                leader: leaders.find(l => l.guid == g.leader).fullName,
+                totalPoints: g.totalPoints,
+                group: groups.find(r => r.guid == g.group).name
+            }))
+    fs.writeFileSync(`./docs/index.html`, template({groups: gs}))
+}
+generateIndex()
+
 const generateDanceGroups = () => {
     fs.mkdirSync("./docs/kolektivi")
     const template = Handlebars.compile(readTemplate("./views/dance-group.html"))
