@@ -18,6 +18,8 @@
   "homepage": "https://github.com/klavs/db-lv#readme",
   "dependencies": {
     "csv": "^1.1.1",
-    "guid": "0.0.12"
+    "delete": "^1.1.0",
+    "guid": "0.0.12",
+    "handlebars": "^4.0.10"
   }
 }

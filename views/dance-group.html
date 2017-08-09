@@ -5,7 +5,7 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Kolektīvs</title>
+        <title>{{title}}</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
         <style>
@@ -155,19 +155,18 @@
                     <div class="header__main-info">
                         <div class="image"></div>
                         <span class="name-row">
-                             <span class="quality-group">A</span> 
-                            <h1 class="group-name" itemprop="name">Kolektīvs</h1>
+                             <span class="quality-group">{{group}}</span> 
+                            <h1 class="group-name" itemprop="name">{{shortName}}</h1>
                         </span>
                     </div>
                 </div>
             </header>
             <main>
-                <p itemprop="description">Rīgas pašvaldības Kultūras iestāžu apvienības Koncertorganizācijas "Ave Sol" Tautas deju ansamblis "Kolektīvs"</p>
+                <p itemprop="description">{{fullName}}</p>
                 <section>
                     <h2>Vadītāji</h2>
                     <ul class="property-list">
-                        <li class="property" itemprop="employee">Jane Doe</li>
-                        <li class="property" itemprop="employee">John Doe</li>
+                        <li class="property" itemprop="employee">{{leader}}</li>
                     </ul>
                 </section>
                 <section>
@@ -182,9 +181,9 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>XXVI Vispārējo latviešu Dziesmu un XVI deju svētku lieluzveduma “Māras zeme” repertuāra apguves skate 2017. gadā</td>
-                                <td>99.9 punkti</td>
-                                <td>Augstākā pakāpe</td>
+                                <td>XXVI Vispārējo latviešu Dziesmu un XVI deju svētku lieluzveduma "Māras zeme" repertuāra apguves skate 2017. gadā</td>
+                                <td>{{totalPoints}} punkti</td>
+                                <td>{{result}}</td>
                             </tr>
                         </tbody>
                     </table>
