@@ -1,0 +1,23 @@
+{
+  "name": "db-lv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/klavs/db-lv.git"
+  },
+  "author": "Klāvs Priedītis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/klavs/db-lv/issues"
+  },
+  "homepage": "https://github.com/klavs/db-lv#readme",
+  "dependencies": {
+    "csv": "^1.1.1",
+    "guid": "0.0.12"
+  }
+}
