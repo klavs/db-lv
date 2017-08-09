@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Jauniešu deju kolektīvs &quot;Daugaviņa&quot; (Kanāda)</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
+        <style>
+            h2 {
+                margin-top: 1.618em;
+            }
+            body {
+                font-family: 'Roboto', sans-serif;
+                background-color: #bababa;
+            }
+            .main-section {
+                width: 768px;
+                background-color: white;
+                border-style: hidden;
+                border-radius: 2px;
+                margin: 64px auto;
+                box-shadow: 1px 1px 8px #555;
+            }
+            .header__hero {
+                width: 100%;
+                height: calc(768px/21*13);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-color: #bababa;
+            }
+            .header__main-info-holder {
+                position: relative;
+                height: calc(768px/21*2);
+            }
+            .header__main-info {
+                padding: 0 calc(768px/21);
+                height: calc(768px/21*7);
+                position: relative;
+                top: calc(-768px/21*5);
+                display: flex;
+                align-items: flex-end;
+            }
+            .name-row {
+                display: inline-flex;
+                align-items: base;
+                height: calc(768px/21*2);
+                padding: 8px 0;
+                box-sizing: border-box;
+            }
+            .header__main-info > .image {
+                border-style: solid;
+                border-width: 4px;
+                background-color: white;
+                border-color: white;
+                box-sizing: border-box;
+                width: calc(768px/21*7);
+                min-width: calc(768px/21*7);
+                max-width: calc(768px/21*7);
+                height: calc(768px/21*7);
+                min-height: calc(768px/21*7);
+                max-height: calc(768px/21*7);
+            }
+            .header__main-info > .image > img {
+                box-sizing: border-box;
+                width: 100%;
+                height: 100%;
+            }
+            .quality-group {
+                display: block;
+                background-color: #d01f1f;
+                border-radius: 4px;
+                margin: 10px;
+                padding: 8px;
+                text-align: center;
+                color: white;
+                font-weight: bold;
+                font-size: 1.2rem;
+            }
+            .group-name {
+                margin: 10px;
+                letter-spacing: 0.3em;
+            }
+            main {
+                padding: calc(768px/21);
+                padding-top: 0;
+            }
+            .property-list {
+                padding: 0;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+            .property {
+                flex-grow: 1;
+                list-style: none;
+                margin-bottom: 16px;
+                width: 33%
+            }
+            .property--half {
+                width: 50%
+            }
+            .property:last-child {
+                margin-bottom: 0;
+            }
+            .property_icon {
+                display: inline-block;
+                width: 48px;
+                height: 48px;
+                border-radius: 48px;
+                background-color: orange;
+                vertical-align: middle;
+                margin-right: 16px;
+            }
+            .data-table {
+                width: 100%;
+                text-align: left;
+            }
+            .data-table th:first-child {
+                width: 60%;
+            }
+            .data-table.events th {
+                width: 30%;
+            }
+            .data-table th,
+            .data-table td {
+                padding-bottom: 16px;
+            }
+            .background {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: -1;
+            }
+            .header-background {
+                background-color: hsla(39, 85%, 70%, 1);
+                height: calc(calc(768px/21*15) + 64px);
+                box-shadow: 1px 1px 8px #555;
+            }
+        </style>
+        <link rel="icon" href="images/favicon.png">
+    </head>
+    <body>
+        <div class="background">
+            <div class="header-background"></div>
+        </div>
+        <div class="main-section" itemscope itemtype="http://schema.org/DanceGroup">
+            <header>
+                <div class="header__hero"></div>
+                <div class="header__main-info-holder">
+                    <div class="header__main-info">
+                        <div class="image"></div>
+                        <span class="name-row">
+                             <span class="quality-group"></span> 
+                            <h1 class="group-name" itemprop="name"></h1>
+                        </span>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <p itemprop="description">Jauniešu deju kolektīvs &quot;Daugaviņa&quot; (Kanāda)</p>
+                <section>
+                    <h2>Vadītāji</h2>
+                    <ul class="property-list">
+                        <li class="property" itemprop="employee">Selga Apse</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Skates</h2>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Nosaukums</th>
+                                <th>Rezultāts</th>
+                                <th>Iegūtā pakāpe</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>XXVI Vispārējo latviešu Dziesmu un XVI deju svētku lieluzveduma "Māras zeme" repertuāra apguves skate 2017. gadā</td>
+                                <td>32,5 punkti</td>
+                                <td>III pakāpe</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </main>
+        </div>
+    </body>
+</html>
