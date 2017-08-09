@@ -26,7 +26,8 @@ const generateDanceGroups = () => {
             fullName: g.fullName,
             leader: leaders.find(l => l.guid == g.leader).fullName,
             totalPoints: g.totalPoints,
-            result: results.find(r => r.guid == g.result).name
+            result: results.find(r => r.guid == g.result).name,
+            group: groups.find(r => r.guid == g.group).name
         }))
         .forEach(g => fs.writeFileSync(`./docs/kolektivi/${g.guid}.html`, template(g)))
 }
