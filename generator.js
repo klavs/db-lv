@@ -1,5 +1,6 @@
 const fs = require("fs")
-const del = require('delete')
+const del = require("delete")
+const copy = require("copy")
 const Handlebars = require("handlebars")
 
 const readData = path => JSON.parse(fs.readFileSync(path, {encoding: "utf8"}))
@@ -46,3 +47,6 @@ const generateDanceGroups = () => {
         .forEach(g => fs.writeFileSync(`./docs/kolektivi/${g.guid}.html`, template(g)))
 }
 generateDanceGroups()
+
+fs.mkdirSync("./docs/static")
+copy("./static/*.*", "./docs/static", () => {})

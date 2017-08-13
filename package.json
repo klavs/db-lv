@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/klavs/db-lv#readme",
   "dependencies": {
+    "copy": "^0.3.0",
     "csv": "^1.1.1",
     "delete": "^1.1.0",
     "guid": "0.0.12",
