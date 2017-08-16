@@ -59,3 +59,5 @@ generateDanceGroups()
 
 fs.mkdirSync("./docs/static")
 copy("./static/*.*", "./docs/static", () => {})
+
+copy("./CNAME", "./docs", () => {})
