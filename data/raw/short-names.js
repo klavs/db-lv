@@ -10,4 +10,4 @@ groups.forEach(g => {
     }
 })
 
-fs.writeFileSync("../danceGroups.json", JSON.stringify(groups, null, 4))
+fs.writeFileSync("./data/danceGroups.json", JSON.stringify(groups, null, 4))
