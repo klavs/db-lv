@@ -40,7 +40,8 @@ a:hover {
     margin-top: 1rem;
 }
 .main-section {
-    width: 768px;
+    width: 100%;
+    max-width: 768px;
     background-color: white;
     border-style: hidden;
     border-radius: 2px;
@@ -162,4 +163,13 @@ main {
     background-color: hsla(39, 85%, 70%, 1);
     height: calc(15rem + 64px);
     box-shadow: 1px 1px 8px #555;
+}
+
+@media (max-width: 768px) {
+    .header__main-info {
+        display: block;
+    }
+    .header__main-info-holder {
+        height: 4rem;
+    }
 }
