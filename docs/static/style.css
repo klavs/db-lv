@@ -1,9 +1,30 @@
-h2 {
-    margin-top: 1.618em;
+:root {
+    font-family: 'Roboto', sans-serif;
+    font-size: 36.57px;
 }
 body {
-    font-family: 'Roboto', sans-serif;
     background-color: #bababa;
+    line-height: 1rem;
+    font-size: 0.533rem;
+}
+h1 {
+    margin-top: 0.5rem;
+    font-size: 1.133rem;
+    margin-bottom: 0.367rem;
+}
+h2 {
+    margin-top: 1rem;
+    font-size: 0.866rem;
+    margin-bottom: 0.144rem;
+}
+ul {
+    margin: 0;
+}
+p {
+    margin: 0;
+}
+.description {
+    margin-top: 1rem;
 }
 .main-section {
     width: 768px;
@@ -15,29 +36,25 @@ body {
 }
 .header__hero {
     width: 100%;
-    height: calc(768px/21*13);
+    height: 13rem;
     background-size: cover;
     background-repeat: no-repeat;
     background-color: #bababa;
 }
 .header__main-info-holder {
     position: relative;
-    height: calc(768px/21*2);
+    height: 2rem;
 }
 .header__main-info {
-    padding: 0 calc(768px/21);
-    height: calc(768px/21*7);
+    padding: 0 1rem;
+    height: 7rem;
     position: relative;
-    top: calc(-768px/21*5);
+    top: -5rem;
     display: flex;
     align-items: flex-end;
 }
 .name-row {
     display: inline-flex;
-    align-items: base;
-    height: calc(768px/21*2);
-    padding: 8px 0;
-    box-sizing: border-box;
 }
 .header__main-info > .image {
     border-style: solid;
@@ -45,12 +62,12 @@ body {
     background-color: white;
     border-color: white;
     box-sizing: border-box;
-    width: calc(768px/21*7);
-    min-width: calc(768px/21*7);
-    max-width: calc(768px/21*7);
-    height: calc(768px/21*7);
-    min-height: calc(768px/21*7);
-    max-height: calc(768px/21*7);
+    width: 7rem;
+    min-width: 7rem;
+    max-width: 7rem;
+    height: 7rem;
+    min-height: 7rem;
+    max-height: 7rem;
 }
 .header__main-info > .image > img {
     box-sizing: border-box;
@@ -66,14 +83,10 @@ body {
     text-align: center;
     color: white;
     font-weight: bold;
-    font-size: 1.2rem;
-}
-.group-name {
-    margin: 10px;
-    letter-spacing: 0.3em;
+    font-size: 1.133rem;
 }
 main {
-    padding: calc(768px/21);
+    padding: 1rem;
     padding-top: 0;
 }
 .property-list {
@@ -113,9 +126,8 @@ main {
 .data-table.events th {
     width: 30%;
 }
-.data-table th,
-.data-table td {
-    padding-bottom: 16px;
+.data-table th{
+    font-size: 0.6rem;
 }
 .background {
     position: absolute;
@@ -127,6 +139,6 @@ main {
 }
 .header-background {
     background-color: hsla(39, 85%, 70%, 1);
-    height: calc(calc(768px/21*15) + 64px);
+    height: calc(15rem + 64px);
     box-shadow: 1px 1px 8px #555;
 }
