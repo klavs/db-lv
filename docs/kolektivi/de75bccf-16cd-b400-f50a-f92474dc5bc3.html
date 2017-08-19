@@ -23,6 +23,25 @@
         </script>
     </head>
     <body>
+        <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+            appId      : '1236171016488428',
+            cookie     : true,
+            xfbml      : true,
+            version    : 'v2.8'
+            });
+            FB.AppEvents.logPageView();   
+        };
+        
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
         <div class="background">
             <div class="header-background"></div>
         </div>
@@ -47,7 +66,7 @@
                         <li class="property" itemprop="employee">
                             <a href="/vaditaji/be7647dc-8ffa-be84-10e3-9b3f0e57c5dd">Baiba Freidenfelde</a>
                         </li>
-                    </ul>
+                    </ul> 
                 </section>
                 <section>
                     <h2>Skates</h2>
