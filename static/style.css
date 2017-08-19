@@ -41,7 +41,7 @@ a:hover {
 }
 .main-section {
     width: 100%;
-    max-width: 768px;
+    max-width: 21rem;
     background-color: white;
     border-style: hidden;
     border-radius: 2px;
@@ -171,5 +171,12 @@ main {
     }
     .header__main-info-holder {
         height: 4rem;
+    }
+    .main-section {
+        width: calc(100% - 0.66rem);
+        min-width: calc(-0.66rem + 360px);
+    }
+    .header__main-info {
+        padding: 0 0.66rem;
     }
 }
