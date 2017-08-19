@@ -31,9 +31,9 @@
             xfbml      : true,
             version    : 'v2.8'
             });
-            FB.AppEvents.logPageView();   
+            FB.AppEvents.logPageView();
         };
-        
+
         (function(d, s, id){
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) {return;}
@@ -79,7 +79,13 @@
                                         <a href="/kolektivi/{{guid}}" itemprop="url sameAs mainEntityOfPage name" title="{{fullName}}">{{shortName}}</a>
                                     </div>
                                 </td>
-                                <td><a href="/vaditaji/{{leader.guid}}">{{leader.fullName}}</a></td>
+                                <td>
+                                    <ul class="property-list">
+                                        {{#each leaders}}
+                                        <li class="property"><a href="/vaditaji/{{guid}}">{{fullName}}</a></li>
+                                        {{/each}}
+                                    </ul>
+                                </td>
                                 <td>{{totalPoints}}</td>
                             </tr>
                             {{/each}}

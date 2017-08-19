@@ -23,7 +23,7 @@ const generateIndex = () => {
             guid: g.guid,
             fullName: g.fullName,
             shortName: g.shortName || g.fullName,
-            leader: leaders.find(l => l.guid == g.leader),
+            leaders: g.leaders.map(gl => leaders.find(l => l.guid == gl)),
             totalPoints: g.totalPoints,
             group: groups.find(r => r.guid == g.group).name
         }))
@@ -49,7 +49,7 @@ const generateDanceGroups = () => {
             title: g.shortName || g.fullName,
             shortName: g.shortName,
             fullName: g.fullName,
-            leader: leaders.find(l => l.guid == g.leader),
+            leaders: g.leaders.map(gl => leaders.find(l => l.guid == gl)),
             totalPoints: g.totalPoints,
             result: results.find(r => r.guid == g.result).name,
             group: groups.find(r => r.guid == g.group).name
@@ -65,7 +65,7 @@ const generateLeaders = () => {
         .map(l => ({
             guid: l.guid,
             fullName: l.fullName,
-            groups: danceGroups.filter(g => g.leader == l.guid)
+            groups: danceGroups.filter(g => g.leaders.includes(l.guid))
         }))
         .forEach(g => fs.writeFileSync(`./docs/vaditaji/${g.guid}.html`, template(g)))
 }

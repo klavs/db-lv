@@ -72,9 +72,11 @@
                 <section>
                     <h2>Vadītāji</h2>
                     <ul class="property-list">
+                        {{#each leaders}}
                         <li class="property" itemprop="employee">
-                            <a href="/vaditaji/{{leader.guid}}">{{leader.fullName}}</a>
+                            <a href="/vaditaji/{{guid}}">{{fullName}}</a>
                         </li>
+                        {{/each}}
                     </ul>
                 </section>
                 <section>
