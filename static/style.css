@@ -164,7 +164,13 @@ main {
     height: calc(15rem + 64px);
     box-shadow: 1px 1px 8px #555;
 }
-
+.table-cell-label {
+    display: none;
+    font-size: 0.4rem;
+    line-height: 0.4rem;
+    margin-top: 0.4rem;
+    font-weight: normal;
+}
 @media (max-width: 768px) {
     .header__main-info {
         display: block;
@@ -187,5 +193,33 @@ main {
     .name-row {
         display: flex;
         justify-content: center;
+    }
+}
+@media (max-width: 425px) {
+    .data-table.collapse-425 thead {
+        display: none;
+    }
+    .data-table.collapse-425 tbody tr {
+        display: block;
+    }
+    .data-table.collapse-425 tbody tr td {
+        display: block;
+    }
+    .data-table.collapse-425 .table-cell-label {
+        display: block;
+    }
+}
+@media (max-width: 768px) {
+    .data-table.collapse-768 thead {
+        display: none;
+    }
+    .data-table.collapse-768 tbody tr {
+        display: block;
+    }
+    .data-table.collapse-768 tbody tr td {
+        display: block;
+    }
+    .data-table.collapse-768 .table-cell-label {
+        display: block;
     }
 }

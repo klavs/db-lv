@@ -66,7 +66,7 @@
                 {{#each classes}}
                 <section itemscope itemtype="http://schema.org/ItemList">
                     <h2 itemprop="name">Grupa: {{class}}</h2>
-                    <table class="data-table groups">
+                    <table class="data-table groups collapse-425">
                         <thead>
                             <tr>
                                 <th>Nosaukums</th>
@@ -78,19 +78,24 @@
                             {{#each groups}}
                             <tr itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
                                 <td>
+                                    <div class="table-cell-label">Kolektīvs</div>
                                     <meta itemprop="position" content="{{@index}}"/>
                                     <div itemprop="item" itemscope itemtype="http://schema.org/DanceGroup">
                                         <a href="/kolektivi/{{guid}}" itemprop="url sameAs mainEntityOfPage name" title="{{fullName}}">{{shortName}}</a>
                                     </div>
                                 </td>
                                 <td>
+                                    <div class="table-cell-label">Vadītāji</div>
                                     <ul class="property-list">
                                         {{#each leaders}}
                                         <li class="property"><a href="/vaditaji/{{guid}}">{{fullName}}</a></li>
                                         {{/each}}
                                     </ul>
                                 </td>
-                                <td>{{totalPoints}}</td>
+                                <td>
+                                    <div class="table-cell-label">Rezultāts</div>
+                                    {{totalPoints}}
+                                </td>
                             </tr>
                             {{/each}}
                         </tbody>
