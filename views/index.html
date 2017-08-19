@@ -5,7 +5,7 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Kolektīvi</title>
+        <title>Skate 2017</title>
         <link rel="alternate" hreflang="lv-LV" href="https://lvdb.lv">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
@@ -33,12 +33,13 @@
                     <div class="header__main-info">
                         <div class="image"></div>
                         <span class="name-row">
-                            <h1 class="group-name">Kolektīvi</h1>
+                            <h1 class="group-name">Skate 2017</h1>
                         </span>
                     </div>
                 </div>
             </header>
             <main>
+                <p itemprop="description">XXVI Vispārējo latviešu Dziesmu un XVI deju svētku lieluzveduma "Māras zeme" repertuāra apguves skate 2017. gadā</p>
                 {{#each classes}}
                 <section itemscope itemtype="http://schema.org/ItemList">
                     <h2 itemprop="name">Grupa: {{class}}</h2>
@@ -56,7 +57,7 @@
                                 <td>
                                     <meta itemprop="position" content="{{@index}}"/>
                                     <div itemprop="item" itemscope itemtype="http://schema.org/DanceGroup">
-                                        <a href="./kolektivi/{{guid}}" itemprop="url sameAs mainEntityOfPage name">{{fullName}}</a>
+                                        <a href="./kolektivi/{{guid}}" itemprop="url sameAs mainEntityOfPage name" title="{{fullName}}">{{shortName}}</a>
                                     </div>
                                 </td>
                                 <td>{{leader}}</td>

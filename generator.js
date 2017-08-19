@@ -22,6 +22,7 @@ const generateIndex = () => {
         .map(g => ({
             guid: g.guid,
             fullName: g.fullName,
+            shortName: g.shortName || g.fullName,
             leader: leaders.find(l => l.guid == g.leader).fullName,
             totalPoints: g.totalPoints,
             group: groups.find(r => r.guid == g.group).name
