@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "http-server ./docs",
+    "build": "node ./generator.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,8 @@
     "delete": "^1.1.0",
     "guid": "0.0.12",
     "handlebars": "^4.0.10"
+  },
+  "devDependencies": {
+    "http-server": "^0.10.0"
   }
 }
