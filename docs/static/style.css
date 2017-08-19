@@ -168,6 +168,10 @@ main {
 @media (max-width: 768px) {
     .header__main-info {
         display: block;
+        padding: 0 0.66rem;
+    }
+    .header__main-info > .image {
+        margin: auto;
     }
     .header__main-info-holder {
         height: 4rem;
@@ -176,7 +180,12 @@ main {
         width: calc(100% - 0.66rem);
         min-width: calc(-0.66rem + 360px);
     }
-    .header__main-info {
-        padding: 0 0.66rem;
+    main {
+        padding-left: 0.66rem;
+        padding-right: 0.66rem;
+    }
+    .name-row {
+        display: flex;
+        justify-content: center;
     }
 }
