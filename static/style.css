@@ -29,6 +29,13 @@ ul {
 p {
     margin: 0;
 }
+a {
+    font-weight: normal;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
 .description {
     margin-top: 1rem;
 }
