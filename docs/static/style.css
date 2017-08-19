@@ -104,15 +104,9 @@ main {
 }
 .property-list {
     padding: 0;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
 }
 .property {
-    flex-grow: 1;
     list-style: none;
-    margin-bottom: 16px;
-    width: 33%
 }
 .property--half {
     width: 50%

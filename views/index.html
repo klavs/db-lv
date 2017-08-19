@@ -57,10 +57,10 @@
                                 <td>
                                     <meta itemprop="position" content="{{@index}}"/>
                                     <div itemprop="item" itemscope itemtype="http://schema.org/DanceGroup">
-                                        <a href="./kolektivi/{{guid}}" itemprop="url sameAs mainEntityOfPage name" title="{{fullName}}">{{shortName}}</a>
+                                        <a href="/kolektivi/{{guid}}" itemprop="url sameAs mainEntityOfPage name" title="{{fullName}}">{{shortName}}</a>
                                     </div>
                                 </td>
-                                <td>{{leader}}</td>
+                                <td><a href="/vaditaji/{{leader.guid}}">{{leader.fullName}}</a></td>
                                 <td>{{totalPoints}}</td>
                             </tr>
                             {{/each}}

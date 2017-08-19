@@ -23,7 +23,7 @@ const generateIndex = () => {
             guid: g.guid,
             fullName: g.fullName,
             shortName: g.shortName || g.fullName,
-            leader: leaders.find(l => l.guid == g.leader).fullName,
+            leader: leaders.find(l => l.guid == g.leader),
             totalPoints: g.totalPoints,
             group: groups.find(r => r.guid == g.group).name
         }))
@@ -49,7 +49,7 @@ const generateDanceGroups = () => {
             title: g.shortName || g.fullName,
             shortName: g.shortName,
             fullName: g.fullName,
-            leader: leaders.find(l => l.guid == g.leader).fullName,
+            leader: leaders.find(l => l.guid == g.leader),
             totalPoints: g.totalPoints,
             result: results.find(r => r.guid == g.result).name,
             group: groups.find(r => r.guid == g.group).name
@@ -57,6 +57,19 @@ const generateDanceGroups = () => {
         .forEach(g => fs.writeFileSync(`./docs/kolektivi/${g.guid}.html`, template(g)))
 }
 generateDanceGroups()
+
+const generateLeaders = () => {
+    fs.mkdirSync("./docs/vaditaji")
+    const template = Handlebars.compile(readTemplate("./views/leader.html"))
+    leaders
+        .map(l => ({
+            guid: l.guid,
+            fullName: l.fullName,
+            groups: danceGroups.filter(g => g.leader == l.guid)
+        }))
+        .forEach(g => fs.writeFileSync(`./docs/vaditaji/${g.guid}.html`, template(g)))
+}
+generateLeaders()
 
 fs.mkdirSync("./docs/static")
 copy("./static/*.*", "./docs/static", () => {})
