@@ -69,7 +69,8 @@ a:hover {
     align-items: flex-end;
 }
 .name-row {
-    display: inline-flex;
+    display: flex;
+    justify-content: space-between;
 }
 .header__main-info > .image {
     border-style: solid;
@@ -138,6 +139,9 @@ main {
     vertical-align: top;
     padding-top: 0;
     padding-bottom: 0;
+}
+.data-table th {
+    text-align: left;
 }
 .data-table td:first-child,
 .data-table th:first-child {
