@@ -177,10 +177,10 @@ main {
 }
 .table-cell-label {
     display: none;
-    font-size: 0.3rem;
+    font-size: 0.4rem;
     line-height: 1rem;
     position: relative;
-    top: 0.4rem;
+    top: 0.3rem;
     font-weight: normal;
 }
 @media (max-width: 768px) {
@@ -220,6 +220,7 @@ main {
     }
     .data-table.collapse-425 tbody tr {
         display: block;
+        padding-bottom: 1rem;
     }
     .data-table.collapse-425 tbody tr td {
         display: block;
@@ -239,6 +240,7 @@ main {
     }
     .data-table.collapse-768 tbody tr {
         display: block;
+        padding-bottom: 1rem;
     }
     .data-table.collapse-768 tbody tr td {
         display: block;
