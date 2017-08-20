@@ -86,8 +86,8 @@
                     <h2>Vadītāji</h2>
                     <ul class="property-list">
                         {{#each leaders}}
-                        <li class="property" itemprop="employee">
-                            <a href="/vaditaji/{{guid}}">{{fullName}}</a>
+                        <li class="property" itemprop="employee" itemscope itemtype="http://schema.org/Person">
+                            <a itemprop="url" href="/vaditaji/{{guid}}"><span itemprop="name">{{fullName}}<span></a>
                         </li>
                         {{/each}}
                     </ul>

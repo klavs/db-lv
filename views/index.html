@@ -84,7 +84,10 @@
                                     <div class="table-cell-label">Kolektīvs</div>
                                     <meta itemprop="position" content="{{@index}}"/>
                                     <div itemprop="item" itemscope itemtype="http://schema.org/DanceGroup">
-                                        <a href="/kolektivi/{{guid}}" itemprop="url sameAs mainEntityOfPage name" title="{{fullName}}">{{shortName}}</a>
+                                        <meta itemprop="description" content="{{fullName}}"/>
+                                        <a href="/kolektivi/{{guid}}" itemprop="url sameAs mainEntityOfPage" title="{{fullName}}">
+                                            <span itemprop="name">{{shortName}}</span>
+                                        </a>
                                     </div>
                                 </td>
                                 <td>
