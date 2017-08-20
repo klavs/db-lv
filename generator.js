@@ -92,7 +92,7 @@ const generateSitemap = () => {
         lastmod: (new Date()).toISOString()
     })))
 
-    fs.writeFileSync("./docs/sitemap.html", template({urls}))
+    fs.writeFileSync("./docs/sitemap.xml", template({urls}))
 }
 generateSitemap()
 
