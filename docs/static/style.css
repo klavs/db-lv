@@ -125,7 +125,8 @@ main {
     margin-right: 16px;
 }
 .data-table {
-    width: 100%;
+    margin: 0 -1rem;
+    width: calc(100% + 2rem);
     text-align: left;
     border-collapse: collapse;
 }
@@ -135,6 +136,14 @@ main {
 .data-table td,
 .data-table th {
     vertical-align: top;
+}
+.data-table td:first-child,
+.data-table th:first-child {
+    padding-left: 1rem;
+}
+.data-table td:last-child,
+.data-table th:last-child {
+    padding-right: 1rem;
 }
 .data-table th:first-child {
     width: 60%;
@@ -190,6 +199,18 @@ main {
         padding-left: 0.66rem;
         padding-right: 0.66rem;
     }
+    .data-table {
+        margin: 0 -0.66rem;
+        width: calc(100% + 1.32rem);
+    }
+    .data-table td:first-child,
+    .data-table th:first-child {
+        padding-left: 0.66rem;
+    }
+    .data-table td:last-child,
+    .data-table th:last-child {
+        padding-right: 0.66rem;
+    }
     .name-row {
         display: flex;
         justify-content: center;
@@ -208,6 +229,11 @@ main {
     .data-table.collapse-425 .table-cell-label {
         display: block;
     }
+    .data-table.collapse-425 td,
+    .data-table.collapse-425 th {
+        padding-left: 0.66rem;
+        padding-right: 0.66rem;
+    }
 }
 @media (max-width: 768px) {
     .data-table.collapse-768 thead {
@@ -221,5 +247,10 @@ main {
     }
     .data-table.collapse-768 .table-cell-label {
         display: block;
+    }
+    .data-table.collapse-768 td,
+    .data-table.collapse-768 th {
+        padding-left: 0.66rem;
+        padding-right: 0.66rem;
     }
 }
