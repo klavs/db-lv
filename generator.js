@@ -71,6 +71,31 @@ const generateLeaders = () => {
 }
 generateLeaders()
 
+const generateSitemap = () => {
+    const template = Handlebars.compile(readTemplate("./views/sitemap.xml"))
+    let urls = [
+        {
+            loc: "https://lvdb.lv/",
+            changefreq: "hourly",
+            priority: "1.0",
+            lastmod: (new Date()).toISOString()
+        }
+    ].concat(danceGroups.map(g => ({
+        loc: "https://lvdb.lv/kolektivi/"+g.guid,
+        changefreq: "hourly",
+        priority: "0.8",
+        lastmod: (new Date()).toISOString()
+    }))).concat(leaders.map(l => ({
+        loc: "https://lvdb.lv/vaditaji/"+l.guid,
+        changefreq: "hourly",
+        priority: "0.6",
+        lastmod: (new Date()).toISOString()
+    })))
+
+    fs.writeFileSync("./docs/sitemap.html", template({urls}))
+}
+generateSitemap()
+
 fs.mkdirSync("./docs/static")
 copy("./static/*.*", "./docs/static", () => {})
 
