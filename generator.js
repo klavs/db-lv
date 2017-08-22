@@ -64,10 +64,14 @@ const generateLeaders = () => {
     leaders
         .map(l => ({
             guid: l.guid,
+            slug: l.slug,
             fullName: l.fullName,
             groups: danceGroups.filter(g => g.leaders.includes(l.guid))
         }))
-        .forEach(g => fs.writeFileSync(`./docs/vaditaji/${g.guid}.html`, template(g)))
+        .forEach(g => {
+            fs.writeFileSync(`./docs/vaditaji/${g.guid}.html`, template(g))
+            g.slug && fs.writeFileSync(`./docs/vaditaji/${g.slug}.html`, template(g))
+        })
 }
 generateLeaders()
 
@@ -87,6 +91,11 @@ const generateSitemap = () => {
         lastmod: (new Date()).toISOString()
     }))).concat(leaders.map(l => ({
         loc: "https://lvdb.lv/vaditaji/"+l.guid,
+        changefreq: "hourly",
+        priority: "0.6",
+        lastmod: (new Date()).toISOString()
+    }))).concat(leaders.map(l => ({
+        loc: "https://lvdb.lv/vaditaji/"+l.slug,
         changefreq: "hourly",
         priority: "0.6",
         lastmod: (new Date()).toISOString()
