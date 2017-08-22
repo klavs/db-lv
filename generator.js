@@ -21,6 +21,7 @@ const generateIndex = () => {
     const gs = danceGroups
         .map(g => ({
             guid: g.guid,
+            slug: g.slug,
             fullName: g.fullName,
             shortName: g.shortName || g.fullName,
             leaders: g.leaders.map(gl => leaders.find(l => l.guid == gl)),
@@ -46,6 +47,7 @@ const generateDanceGroups = () => {
     danceGroups
         .map(g => ({
             guid: g.guid,
+            slug: g.slug,
             title: g.shortName || g.fullName,
             shortName: g.shortName,
             fullName: g.fullName,
@@ -54,7 +56,10 @@ const generateDanceGroups = () => {
             result: results.find(r => r.guid == g.result).name,
             group: groups.find(r => r.guid == g.group).name
         }))
-        .forEach(g => fs.writeFileSync(`./docs/kolektivi/${g.guid}.html`, template(g)))
+        .forEach(g => {
+            g.guid && fs.writeFileSync(`./docs/kolektivi/${g.guid}.html`, template(g))
+            g.slug && fs.writeFileSync(`./docs/kolektivi/${g.slug}.html`, template(g))
+        })
 }
 generateDanceGroups()
 
@@ -87,12 +92,17 @@ const generateSitemap = () => {
     ].concat(danceGroups.map(g => ({
         loc: "https://lvdb.lv/kolektivi/"+g.guid,
         changefreq: "hourly",
+        priority: "0.7",
+        lastmod: (new Date()).toISOString()
+    }))).concat(danceGroups.map(g => ({
+        loc: "https://lvdb.lv/kolektivi/"+g.slug,
+        changefreq: "hourly",
         priority: "0.8",
         lastmod: (new Date()).toISOString()
     }))).concat(leaders.map(l => ({
         loc: "https://lvdb.lv/vaditaji/"+l.guid,
         changefreq: "hourly",
-        priority: "0.6",
+        priority: "0.5",
         lastmod: (new Date()).toISOString()
     }))).concat(leaders.map(l => ({
         loc: "https://lvdb.lv/vaditaji/"+l.slug,
