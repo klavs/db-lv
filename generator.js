@@ -107,24 +107,25 @@ const generateSitemap = () => {
             changefreq: "hourly",
             priority: "1.0",
             lastmod: (new Date()).toISOString()
+        },
+        {
+            loc: "https://lvdb.lv/skates/2017/",
+            changefreq: "hourly",
+            priority: "1.0",
+            lastmod: (new Date()).toISOString()
         }
     ].concat(danceGroups.map(g => ({
-        loc: "https://lvdb.lv/kolektivi/"+g.guid,
-        changefreq: "hourly",
-        priority: "0.7",
-        lastmod: (new Date()).toISOString()
-    }))).concat(danceGroups.map(g => ({
         loc: "https://lvdb.lv/kolektivi/"+g.slug,
         changefreq: "hourly",
         priority: "0.8",
         lastmod: (new Date()).toISOString()
     }))).concat(leaders.map(l => ({
-        loc: "https://lvdb.lv/vaditaji/"+l.guid,
-        changefreq: "hourly",
-        priority: "0.5",
-        lastmod: (new Date()).toISOString()
-    }))).concat(leaders.map(l => ({
         loc: "https://lvdb.lv/vaditaji/"+l.slug,
+        changefreq: "hourly",
+        priority: "0.6",
+        lastmod: (new Date()).toISOString()
+    }))).concat(groups.map(g => ({
+        loc: "https://lvdb.lv/skates/2017/"+slug(g.name),
         changefreq: "hourly",
         priority: "0.6",
         lastmod: (new Date()).toISOString()
