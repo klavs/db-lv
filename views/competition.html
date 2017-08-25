@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="lv">
+    <head
+        itemscope itemtype="http://schema.org/WebSite"
+        >
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-KSXCLLZ');</script>
+            <!-- End Google Tag Manager -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="msvalidate.01" content="CD405DAD5EA4CF65237EAB3E933C6C74" />
+
+        <title>Skate 2017</title>
+        <meta itemprop='name' content="lvdb.lv">
+        <link rel="canonical" href="https://lvdb.lv" itemprop="url">
+        <link rel="alternate" hreflang="lv-LV" href="https://lvdb.lv">
+        <meta name="theme-color" content="#f4c671">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&amp;subset=latin-ext" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
+        <link rel="stylesheet" href="/static/style.css" />
+        <link rel="icon" href="images/favicon.png">
+    </head>
+    <body>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSXCLLZ"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+            appId      : '1236171016488428',
+            cookie     : true,
+            xfbml      : true,
+            version    : 'v2.8'
+            });
+            FB.AppEvents.logPageView();
+        };
+
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+        <div class="background">
+            <div class="header-background"></div>
+        </div>
+        <div class="main-section">
+            <!-- <header>
+                <div class="header__hero"></div>
+                <div class="header__main-info-holder">
+                    <div class="header__main-info">
+                        <div class="image"></div>
+                        <span class="name-row">
+                            <h1 class="group-name">Skate 2017</h1>
+                        </span>
+                    </div>
+                </div>
+            </header> -->
+            <main>
+                <h1>Skate 2017</h1>
+                <p itemprop="description">XXVI Vispārējo latviešu Dziesmu un XVI deju svētku lieluzveduma "Māras zeme" repertuāra apguves skate 2017. gadā</p>
+                {{#each classes}}
+                <section itemscope itemtype="http://schema.org/ItemList">
+                    <h2 itemprop="name">Grupa: {{class}}</h2>
+                    <table class="data-table groups collapse-425">
+                        <thead>
+                            <tr>
+                                <th>Nosaukums</th>
+                                <th>Vadītājs</th>
+                                <th>Punkti</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each groups}}
+                            <tr itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                <td>
+                                    <div class="table-cell-label">Kolektīvs</div>
+                                    <meta itemprop="position" content="{{@index}}"/>
+                                    <div itemprop="item" itemscope itemtype="http://schema.org/DanceGroup">
+                                        <meta itemprop="description" content="{{fullName}}"/>
+                                        <a href="/kolektivi/{{slug}}" itemprop="url sameAs mainEntityOfPage" title="{{fullName}}">
+                                            <span itemprop="name">{{shortName}}</span>
+                                        </a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="table-cell-label">Vadītāji</div>
+                                    <ul class="property-list">
+                                        {{#each leaders}}
+                                        <li class="property"><a href="/vaditaji/{{slug}}">{{fullName}}</a></li>
+                                        {{/each}}
+                                    </ul>
+                                </td>
+                                <td>
+                                    <div class="table-cell-label">Rezultāts</div>
+                                    {{totalPoints}}
+                                </td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </section>
+                {{/each}}
+            </main>
+        </div>
+    </body>
+</html>

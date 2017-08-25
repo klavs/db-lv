@@ -1,4 +1,5 @@
 const fs = require("fs")
+const slug = require("slug")
 const del = require("delete")
 const copy = require("copy")
 const Handlebars = require("handlebars")
@@ -18,6 +19,18 @@ const readTemplate = path => fs.readFileSync(path, {encoding: "utf-8"})
 
 const generateIndex = () => {
     const template = Handlebars.compile(readTemplate("./views/index.html"))
+    var classes = groups.map(g => ({
+        name: g.name,
+        slug: slug(g.name)
+    }))
+    fs.writeFileSync(`./docs/index.html`, template({classes}))
+}
+generateIndex()
+
+const generateCompetitionForGroup = () => {
+    fs.mkdirSync("./docs/skates")
+    fs.mkdirSync("./docs/skates/2017")
+    const template = Handlebars.compile(readTemplate("./views/competition.html"))
     const gs = danceGroups
         .map(g => ({
             guid: g.guid,
@@ -37,9 +50,15 @@ const generateIndex = () => {
     }, {})
     let cls = [];
     Object.keys(classes).forEach(cl => cls.push({class: cl, groups: classes[cl]}))
-    fs.writeFileSync(`./docs/index.html`, template({classes: cls}))
+    fs.writeFileSync(`./docs/skates/2017/index.html`, template({classes: cls}))
+
+    const templateForGroup = Handlebars.compile(readTemplate("./views/competition-for-group.html"))
+
+    cls.forEach(cl => {
+        fs.writeFileSync(`./docs/skates/2017/${slug(cl.class)}.html`, templateForGroup(cl))
+    })
 }
-generateIndex()
+generateCompetitionForGroup()
 
 const generateDanceGroups = () => {
     fs.mkdirSync("./docs/kolektivi")
